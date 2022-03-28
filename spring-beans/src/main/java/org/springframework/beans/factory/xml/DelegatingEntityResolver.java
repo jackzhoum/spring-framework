@@ -60,6 +60,8 @@ public class DelegatingEntityResolver implements EntityResolver {
 	 */
 	public DelegatingEntityResolver(@Nullable ClassLoader classLoader) {
 		this.dtdResolver = new BeansDtdResolver();
+		//TODO 注释 当运行完这段代码以后，schemaResolver的schemaMappings属性被完成了赋值操作，
+		// 实际是因为debug时，idea会帮我们调用toString方法，
 		this.schemaResolver = new PluggableSchemaResolver(classLoader);
 	}
 
